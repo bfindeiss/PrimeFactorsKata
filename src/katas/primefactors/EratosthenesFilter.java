@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class EratosthenesFilter {
 
-	private ArrayList<EratosthenesNumber> filter;
+	protected ArrayList<EratosthenesNumber> filter;
 
 	public EratosthenesFilter(Integer number) {
 		createFilterUpToNumber(number);
@@ -17,7 +17,7 @@ public class EratosthenesFilter {
 		}
 	}
 
-	public boolean isNotCrossedOut(Integer number) {
+	public boolean isCrossedOut(Integer number) {
 		EratosthenesNumber storedNumber = filter.get(number - 1);
 		return storedNumber.isCrossedOut();
 	}

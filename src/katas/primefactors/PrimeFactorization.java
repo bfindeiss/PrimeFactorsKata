@@ -11,7 +11,7 @@ public class PrimeFactorization {
 				maxPossiblePrimeFactor);
 
 		for (int i = 2; i < maxPossiblePrimeFactor; i++) {
-			if (number % i == 0 && filter.isNotCrossedOut(number)) {
+			if (number % i == 0 && !filter.isCrossedOut(number)) {
 				filter.crossOutEvenMultiplesOf(number);
 			}
 		}
