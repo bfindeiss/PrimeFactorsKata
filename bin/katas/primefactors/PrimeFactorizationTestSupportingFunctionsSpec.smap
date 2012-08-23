@@ -1,0 +1,17 @@
+SMAP
+PrimeFactorizationTestSupportingFunctionsSpec.java
+Spec
+*S Spec
+*F
++ 0 PrimeFactorization.spec
+test/katas/primefactors/PrimeFactorization.spec
+*L
+35:31
+36:32
+37:33
+38:34
+39:35
+43:45,2
+44:47,8
+43:55,3
+*E
