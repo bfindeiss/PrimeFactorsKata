@@ -1,0 +1,12 @@
+SMAP
+EratosthenesFilterAnEmptyFilterSpec.java
+Spec
+*S Spec
+*F
++ 0 EratosthenesFilter.spec
+test/katas/primefactors/EratosthenesFilter.spec
+*L
+8:19,6
+11:30,6
+15:42,7
+*E
