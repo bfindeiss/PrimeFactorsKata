@@ -82,4 +82,62 @@ public class EratosthenesFilterAFilterWithANumberOfElementsSpec extends Eratosth
      + "\n     numberToCrossOut is " + new StringDescription().appendValue(Integer.valueOf(numberToCrossOut)).toString() + "\n", _should_be_1);
     
   }
+  
+  @Test
+  @Named("Cross out even multiples of a number")
+  @Order(99)
+  public void crossOutEvenMultiplesOfANumber() throws Exception {
+    final int numberToCrossOut = 2;
+    boolean _isCrossedOut = this.filter.isCrossedOut(Integer.valueOf(numberToCrossOut));
+    boolean _should_be = Should.<Boolean>should_be(Boolean.valueOf(_isCrossedOut), false);
+    Assert.assertTrue("\nExpected filter.isCrossedOut(numberToCrossOut) should be false but"
+     + "\n     filter.isCrossedOut(numberToCrossOut) is " + new StringDescription().appendValue(Boolean.valueOf(_isCrossedOut)).toString()
+     + "\n     filter is " + new StringDescription().appendValue(this.filter).toString()
+     + "\n     numberToCrossOut is " + new StringDescription().appendValue(Integer.valueOf(numberToCrossOut)).toString() + "\n", _should_be);
+    
+    int _multiply = (numberToCrossOut * 2);
+    boolean _isCrossedOut_1 = this.filter.isCrossedOut(Integer.valueOf(_multiply));
+    boolean _should_be_1 = Should.<Boolean>should_be(Boolean.valueOf(_isCrossedOut_1), false);
+    Assert.assertTrue("\nExpected filter.isCrossedOut(numberToCrossOut*2) should be false but"
+     + "\n     filter.isCrossedOut(numberToCrossOut*2) is " + new StringDescription().appendValue(Boolean.valueOf(_isCrossedOut_1)).toString()
+     + "\n     filter is " + new StringDescription().appendValue(this.filter).toString()
+     + "\n     numberToCrossOut*2 is " + new StringDescription().appendValue(Integer.valueOf(_multiply)).toString()
+     + "\n     numberToCrossOut is " + new StringDescription().appendValue(numberToCrossOut).toString() + "\n", _should_be_1);
+    
+    int _multiply_1 = (numberToCrossOut * 4);
+    boolean _isCrossedOut_2 = this.filter.isCrossedOut(Integer.valueOf(_multiply_1));
+    boolean _should_be_2 = Should.<Boolean>should_be(Boolean.valueOf(_isCrossedOut_2), false);
+    Assert.assertTrue("\nExpected filter.isCrossedOut(numberToCrossOut*4) should be false but"
+     + "\n     filter.isCrossedOut(numberToCrossOut*4) is " + new StringDescription().appendValue(Boolean.valueOf(_isCrossedOut_2)).toString()
+     + "\n     filter is " + new StringDescription().appendValue(this.filter).toString()
+     + "\n     numberToCrossOut*4 is " + new StringDescription().appendValue(Integer.valueOf(_multiply_1)).toString()
+     + "\n     numberToCrossOut is " + new StringDescription().appendValue(numberToCrossOut).toString() + "\n", _should_be_2);
+    
+    this.filter.crossOutEvenMultiplesOf(Integer.valueOf(numberToCrossOut));
+    boolean _isCrossedOut_3 = this.filter.isCrossedOut(Integer.valueOf(numberToCrossOut));
+    boolean _should_be_3 = Should.<Boolean>should_be(Boolean.valueOf(_isCrossedOut_3), true);
+    Assert.assertTrue("\nExpected filter.isCrossedOut(numberToCrossOut) should be true but"
+     + "\n     filter.isCrossedOut(numberToCrossOut) is " + new StringDescription().appendValue(Boolean.valueOf(_isCrossedOut_3)).toString()
+     + "\n     filter is " + new StringDescription().appendValue(this.filter).toString()
+     + "\n     numberToCrossOut is " + new StringDescription().appendValue(Integer.valueOf(numberToCrossOut)).toString() + "\n", _should_be_3);
+    
+    int _multiply_2 = (numberToCrossOut * 2);
+    boolean _isCrossedOut_4 = this.filter.isCrossedOut(Integer.valueOf(_multiply_2));
+    boolean _should_be_4 = Should.<Boolean>should_be(Boolean.valueOf(_isCrossedOut_4), true);
+    Assert.assertTrue("\nExpected filter.isCrossedOut(numberToCrossOut*2) should be true but"
+     + "\n     filter.isCrossedOut(numberToCrossOut*2) is " + new StringDescription().appendValue(Boolean.valueOf(_isCrossedOut_4)).toString()
+     + "\n     filter is " + new StringDescription().appendValue(this.filter).toString()
+     + "\n     numberToCrossOut*2 is " + new StringDescription().appendValue(Integer.valueOf(_multiply_2)).toString()
+     + "\n     numberToCrossOut is " + new StringDescription().appendValue(numberToCrossOut).toString() + "\n", _should_be_4);
+    
+    int _multiply_3 = (numberToCrossOut * 4);
+    boolean _isCrossedOut_5 = this.filter.isCrossedOut(Integer.valueOf(_multiply_3));
+    boolean _should_be_5 = Should.<Boolean>should_be(Boolean.valueOf(_isCrossedOut_5), true);
+    Assert.assertTrue("\nExpected filter.isCrossedOut(numberToCrossOut*4) should be true but"
+     + "\n     filter.isCrossedOut(numberToCrossOut*4) is " + new StringDescription().appendValue(Boolean.valueOf(_isCrossedOut_5)).toString()
+     + "\n     filter is " + new StringDescription().appendValue(this.filter).toString()
+     + "\n     numberToCrossOut*4 is " + new StringDescription().appendValue(Integer.valueOf(_multiply_3)).toString()
+     + "\n     numberToCrossOut is " + new StringDescription().appendValue(numberToCrossOut).toString() + "\n", _should_be_5);
+    
+  }
 }

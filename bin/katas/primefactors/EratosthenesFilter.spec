@@ -35,12 +35,28 @@ describe EratosthenesFilter {
 		
 		fact "Cross out a specific number"{
 		     val numberToCrossOut = 7
+		     
 		     filter.isCrossedOut(numberToCrossOut) should be false
-		     
 		     filter.crossOut(numberToCrossOut)
-		     
 		     filter.isCrossedOut(numberToCrossOut) should be true
 		}
+		
+		fact "Cross out even multiples of a number"{
+			val numberToCrossOut = 2
+			filter.isCrossedOut(numberToCrossOut) should be false
+			filter.isCrossedOut(numberToCrossOut*2) should be false
+			filter.isCrossedOut(numberToCrossOut*4) should be false
+			
+			filter.crossOutEvenMultiplesOf(numberToCrossOut)
+			
+			filter.isCrossedOut(numberToCrossOut) should be true
+			filter.isCrossedOut(numberToCrossOut*2) should be true
+			filter.isCrossedOut(numberToCrossOut*4) should be true
+			
+		}
+		
+		
+		
 	}
 
 }

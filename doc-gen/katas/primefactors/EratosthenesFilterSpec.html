@@ -50,11 +50,22 @@ while(i&lt;=filterLength){
 </li><li><p id="Cross_out_a_specific_number"><strong>Cross out a specific number</strong></p>
 <pre class="prettyprint lang-spec">
 val numberToCrossOut = 7
+
 filter.isCrossedOut(numberToCrossOut) should be false
-
 filter.crossOut(numberToCrossOut)
-
 filter.isCrossedOut(numberToCrossOut) should be true</pre>
+</li><li><p id="Cross_out_even_multiples_of_a_number"><strong>Cross out even multiples of a number</strong></p>
+<pre class="prettyprint lang-spec">
+val numberToCrossOut = 2
+filter.isCrossedOut(numberToCrossOut) should be false
+filter.isCrossedOut(numberToCrossOut*2) should be false
+filter.isCrossedOut(numberToCrossOut*4) should be false
+
+filter.crossOutEvenMultiplesOf(numberToCrossOut)
+
+filter.isCrossedOut(numberToCrossOut) should be true
+filter.isCrossedOut(numberToCrossOut*2) should be true
+filter.isCrossedOut(numberToCrossOut*4) should be true</pre>
 </li></ul>
 				</div>
 			</div>
